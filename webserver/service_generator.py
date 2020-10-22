@@ -6,7 +6,7 @@ dir = os.getcwd()
 
 service = f"""
 [Unit]
-Description=Zoom Webserver
+Description=ZoomSignWebserver
 After=multi-user.target
 
 [Service]
