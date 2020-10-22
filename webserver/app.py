@@ -40,4 +40,4 @@ class Updates(Resource):
 api.add_resource(Updates, '/updates')
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=False)
