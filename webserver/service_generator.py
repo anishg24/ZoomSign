@@ -1,7 +1,7 @@
 import os
 import subprocess
 
-interpreter = subprocess.run(["whereis", "python3"], stdout=subprocess.PIPE, text=True)
+interpreter = subprocess.run(["whereis", "flask"], stdout=subprocess.PIPE, text=True)
 dir = os.getcwd()
 
 service = f"""
@@ -11,7 +11,8 @@ After=multi-user.target
 
 [Service]
 type=idle
-ExecStart={interpreter.stdout.strip()} {os.getcwd()}/app.py
+ExecStartPre=cd {os.getcwd()}/
+ExecStart={interpreter.stdout.strip()} run --host=0.0.0.0
 
 [Install]
 WantedBy=multi-user.target
