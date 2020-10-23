@@ -14,7 +14,7 @@ fields = {
 current_class = {
     "id": 0,
     "message": "NO CLASS",
-    "timestamp": None,
+    "timestamp": str(datetime.datetime.now()),
     "planned_length": 0.,
     "status": 0,
     "in_free_time": False,
