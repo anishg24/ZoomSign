@@ -47,7 +47,7 @@ class Updates(Resource):
         args = parser.parse_args()
         current_class["message"] = args["message"]
         current_class["timestamp"] = args["timestamp"]
-        current_class["planned_length"] = args["planned_length"]
+        current_class["planned_length"] = int(args["planned_length"])
         current_class["id"] += 1
         return 201
 
