@@ -33,7 +33,7 @@ class Updates(Resource):
 
         initial_time = datetime.datetime.strptime(current_class["timestamp"], '%Y-%m-%d %H:%M:%S.%f')
         safe_time = datetime.timedelta(minutes=45) + initial_time
-        clear_time = datetime.timedelta(hours=1) + initial_time
+        clear_time = datetime.timedelta(hours=current_class["planned_length"]) + initial_time
         if datetime.datetime.now() > clear_time:
             current_class["status"] = 2             # Come on in!
         elif datetime.datetime.now() > safe_time:
